@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{User Interface Specification Document}
+\author{Selina Elif Eşit}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This document contains instructions for the software developer to design a 2-page user interface.
+\end{abstract}
+
+\section{Purpose}
+The purpose of this interface is to display the desired information of existing users and to register new users in the system.
+
+
+\section{Requirements}
+The user should be able to accomplish the following requirements through this interface.\\
+\\
+-Create new user records in the system.\\
+-Collect the username information for new users.\\ 
+-Collect the display name information for new users.\\ 
+-Collect the phone number information for new users.\\ 
+-Collect the email information for new users.\\ 
+-Prompt new users to select a user role.\\ 
+-Collect the 'able' status for new users.\\ 
+-Save new user entries.\\ 
+-Assign unique IDs to users.\\ 
+-Display the ID, username, email, and 'able' status of  each user in a tabular format.\\ 
+-Create a numerical filter for the ID information.\\ 
+-Create alphabetical filters for username, email, and 'able' status.\\ 
+-Allow the option to display or hide users with 'Unable' status."
+
+\section{User Behavior}
+In this section, the user has two possible paths to follow: Reviewing existing user records or adding a new user to the system.\\
+\\
+When the user first enters the screen, they see a table containing the ID, username, email, and 'able' status of registered users.\\ 
+The user has the option to hide users with 'Unable' status in the table.\\ 
+The user can view the table entries in ascending or descending order based on the ID.\\ 
+The user can alphabetically sort and view table entries by username, email, and 'able' status.\\ 
+The user can create a new record.\\ 
+\\
+If the user wishes to create a new record, they click on 'New User,' and a registration page opens.\\ 
+The user is prompted to input the 'username.'\\ 
+The user is prompted to input the 'Display name.'\\ 
+The user is prompted to input the 'phone number'.\\ 
+The user is prompted to input the 'email'.\\ 
+The user is expected to select a 'User Role' (Guest/Admin/SuperAdmin).\\ 
+The user is prompted to input 'Enabled' (Clicked/Not clicked).\\ 
+The user saves the new user entry.\\ 
+
+\section{UI Components and Behaviors}
+
+
+
+\subsection{First Page of UI}
+
+*A button labeled "+New User" is present on the top of left corner of page.\\Clicking this button opens a page with the header "New User."\\
+\\
+*A checkbox named "Hide Disabled User" is available next to New user button.\\
+When this checkbox is clicked, users with 'Disabled' status are hidden from the table.\\
+\\
+*A table with columns for ID, Username, Email, and Enable is displayed.\\This table is connected to the database, and the information has been previously gathered in the 'New User' page.\\
+
+
+
+
+
+
+\subsection{Second Page of UI}
+*At the top of the page, a widget is created with a label "New User".Under this widget, the desired label and text fields are listed below.\\
+\\
+*A label named "Username" is followed by a text field.\\The user is asked to input their username, and it is saved in the database.\\
+\\
+*A label named "Display name" is followed by a text field.\\The user is asked to input their display name, and it is saved in the database. In the table on the first page, the display name data is shown in the place of the username.\\
+\\
+*A label named "Phone" is followed by a text field.\\The user is asked to input their phone number, and it is saved in the database.\\
+\\
+*A label named "Email" is followed by a text field.The user is asked to input their email, and it is saved in the database.In the table on the first page, the email data is shown in the place of the email.\\
+\\
+*A label named "User Role" is followed by a combo box (Guest, Admin, SuperAdmin).\\The user is required to select one of Guest, Admin, or SuperAdmin,and this choice is saved in the database.\\
+\\
+*A label named "Enable" is followed by a radio button.\\The user's confirmation of their 'enabled' status is obtained, and it is saved in the database as 'true' (if its clicked)or 'false'(if its not clicked) .This status is shown in the table on the first page in enabled status.\\
+\\
+*A button labeled "Save User" is available at the top of the page and is colored blue.\\The information obtained in the UI is written to the database by clicking this button. Each time a record is saved, an ID is added by the backend. This ID is associated with the individual's information.
+
+\end{document}
